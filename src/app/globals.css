@@ -48,9 +48,13 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@theme {
+  --color-primary-color:#249dc9;
+}
 :root {
-  --background: oklch(1 0 0);
+  --background: #e5e5e5;
   --foreground: oklch(0.145 0 0);
+  --primary-color :#249dc9;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
