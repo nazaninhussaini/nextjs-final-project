@@ -1,8 +1,10 @@
 import React from 'react'
-import {Card , CardHeader, CardContent,CardTitle,CardDescription,Label} from "@/components/ui/card";
-import { Input } from '@base-ui/react';
+import {Card , CardHeader, CardContent,CardTitle,CardDescription} from "@/components/ui/card";
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 function page() {
   return (
     <div className='w-full h-screen flex justify-center items-center'>

@@ -1,8 +1,9 @@
 import React from 'react'
-import {Card , CardHeader, CardContent,CardTitle,CardDescription,Label} from "@/components/ui/card";
-import { Input } from '@base-ui/react';
-import { Button } from '@/components/ui/button';
+import {Card , CardHeader, CardContent,CardTitle,CardDescription} from "@/components/ui/card";
+
 import Link from 'next/link';
+import SignUpForm from '@/components/UiComponend/sign_up_form';
+
 function page() {
   return (
     <div className='w-full h-screen flex justify-center items-center'>
@@ -12,21 +13,7 @@ function page() {
                 <CardDescription>Login to the platform using email and password</CardDescription>
             </CardHeader>
             <CardContent>
-                <form className='w-full grid gap-3'>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "username">UserName</Label>
-                        <Input type='text' id='username' required name='username' />
-                    </div>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "email">Eamil</Label>
-                        <Input type='email' id='email' required name='email' />
-                    </div>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "password">Password</Label>
-                        <Input type='password' id='password' required name='password' />
-                    </div>
-                    <Button>Create Account</Button>
-                </form>
+                <SignUpForm/>
                 <div>
                     <Link href="login" className='hover:cursor-pointer hover:text-gray-500' >
                     Already have an account?</Link>
