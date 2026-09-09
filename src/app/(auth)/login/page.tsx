@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import SignInForm from '@/components/UiComponend/sign_in_form';
 function page() {
   return (
     <div className='w-full h-screen flex justify-center items-center'>
@@ -14,17 +15,7 @@ function page() {
                 <CardDescription>Login to the platform using email and password</CardDescription>
             </CardHeader>
             <CardContent>
-                <form className='w-full grid gap-3'>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "email">Eamil</Label>
-                        <Input type='email' id='email' required name='email' />
-                    </div>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "password">Password</Label>
-                        <Input type='password' id='password' required name='password' />
-                    </div>
-                    <Button>Sign In</Button>
-                </form>
+               <SignInForm/>
                 <div>
                     <Link href="forgot-password" className='hover:cursor-pointer hover:text-gray-500' >Forgot Password</Link>
                 </div>
