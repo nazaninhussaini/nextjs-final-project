@@ -22,7 +22,7 @@ function Navbar() {
 
     }
   return (
-    <div className='w-full border-b backdrop-blur-md fixed top-0 left-0 p-3 flex justify-between items-center '>
+    <div className='w-full border-b border-gray-400  bg-gray-100 backdrop-blur-md fixed top-0 left-0 p-3 flex justify-between items-center '>
      <div>logo</div>
      <div>
         {user ? (

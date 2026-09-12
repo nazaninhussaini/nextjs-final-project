@@ -1,0 +1,18 @@
+{
+    "navbar":{
+        "logo": "final App",
+        "light": "Light",
+        "dark" : "Dark",
+        "system": "System",
+        "login" : "Login",
+        "logout": "LogOut"
+    },
+    "login":{
+        "header" :"Login",
+        "discription" : "Login to the platform using email and password",
+        "email" : "Email",
+        "passord": "password",
+        "btn": "Login",
+        "ispending" : "Loging in..."
+    }
+}
