@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/UiComponend/navbar";
+import { ThemeProvider } from "next-themes";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -19,11 +20,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${roboto.variable}  h-full antialiased`}
-    >
+      className={`${roboto.variable}  h-full antialiased`}>
       <body className="min-h-full relative flex flex-col">
+        
+        <ThemeProvider enableSystem attribute="class">
         <Navbar/>
-        {children}</body>
+        {children}
+        </ThemeProvider>
+        </body>
     </html>
   );
 }
