@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
-import { LayoutDashboard } from 'lucide-react'
+import { LayoutDashboard, ShoppingBasket, User } from 'lucide-react'
 
 function DashbordSideBar() {
   return (
@@ -13,18 +13,15 @@ function DashbordSideBar() {
             <SidebarGroupLabel>
                 Main Content
             </SidebarGroupLabel>
-            <SidebarGroup>
+            <SidebarGroup className='flex flex-col gap-2'>
                 <SidebarMenuItem>
                     <SidebarMenuButton><LayoutDashboard/> Dashbord</SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
-                    <SidebarMenuButton><LayoutDashboard/> Products</SidebarMenuButton>
+                    <SidebarMenuButton><ShoppingBasket/> Products</SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
-                    <SidebarMenuButton><LayoutDashboard/> Dashbord</SidebarMenuButton>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                    <SidebarMenuButton><LayoutDashboard/> Dashbord</SidebarMenuButton>
+                    <SidebarMenuButton><User/> Users</SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarGroup>
         </SidebarContent>
