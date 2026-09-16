@@ -22,9 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${roboto.variable}  h-full antialiased`}>
         
       <body className="min-h-full relative flex flex-col">
-        
         <ThemeProvider enableSystem attribute="class">
-
         {children}
         </ThemeProvider>
         </body>
