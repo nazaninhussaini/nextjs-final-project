@@ -1,11 +1,20 @@
-import React from 'react'
+"use client"
+import React, { useActionState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
+import { Select, SelectContent, SelectGroup, SelectItem } from '../ui/select'
+import { SelectTrigger } from "../ui/select"
+import { addProduct } from '@/lib/product/addproduct.action'
 
 function AddProductForm() {
+   const [date,action]=  useActionState(addProduct,{
+        state:false,
+        message:"",
+    })
+
   return (
    <Card className='w-full'>
     <CardHeader>
@@ -16,14 +25,25 @@ function AddProductForm() {
             You can add new product by filling this form
         </CardDescription>
         <CardContent>
-            <form action="" className='w-full grid grid-cols-1 md:grid-cols-2 gap-2'>
+            <form action={action} className='w-full grid grid-cols-1 md:grid-cols-2 gap-2'>
                 <div className='grid gap-2'>
                     <Label htmlFor='name'>Product name</Label>
                     <Input name='name' type='text' id='name' />
                 </div>
                 <div className='grid gap-2'>
                     <Label htmlFor=''>Product Category</Label>
-                    <Input name='name' type='text' id='name' />
+                   <Select >
+                    <SelectTrigger className="w-full">Product category</SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup>
+                                
+                                <SelectItem>Cloth</SelectItem>
+                                <SelectItem>Shoes</SelectItem>
+                                <SelectItem>Cosmetic Items</SelectItem>
+                                <SelectItem>Toilary Items</SelectItem>
+                            </SelectGroup>
+                        </SelectContent>
+                   </Select>
                 </div>
                 <div className='grid gap-2'>
                     <Label htmlFor='price'>Unit Price</Label>
