@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+// import NavbarPage from "@/components/UiComponend/navbar";
+import NavebarPage from "@/components/shared/navbar";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const inter = Inter({
+  variable: "--font-Inter",
   subsets: ["latin"],
 });
 
-
+const vazirmtn = Vazirmatn({
+  variable: "--font-Vazirmtn",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,13 +23,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${roboto.variable}  h-full antialiased`}>
-        
-      <body className="min-h-full relative flex flex-col">
-        <ThemeProvider enableSystem attribute="class">
-        {children}
-        </ThemeProvider>
-        </body>
+      suppressHydrationWarning
+      className={`${vazirmtn.className} ${inter.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">
+        <NavebarPage/>
+        {children}</body>
     </html>
   );
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu'
+import { Languages } from 'lucide-react'
 
 function LanguageChenger() {
   return (
   <DropdownMenu>
-    <DropdownMenuTrigger>lng</DropdownMenuTrigger>
+    <DropdownMenuTrigger><Languages size={18}/></DropdownMenuTrigger>
     <DropdownMenuGroup>
         <DropdownMenuContent>
         <DropdownMenuLabel>Lunguage | تغییر زبان</DropdownMenuLabel>

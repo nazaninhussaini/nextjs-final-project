@@ -9,7 +9,7 @@ function DropdownMenuShowTheme() {
   return (
       <DropdownMenu>
             <DropdownMenuTrigger>
-                {theme == "light" ? (<Sun/>) : theme =="dark" ?(<Moon/>):(<SunMoon/>)}
+                {theme == "light" ? (<Sun size={18}/>) : theme =="dark" ?(<Moon size={18}/>):(<SunMoon size={18}/>)}
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
@@ -17,9 +17,27 @@ function DropdownMenuShowTheme() {
                     Theme
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator/>
-                <DropdownMenuItem onClick={()=>setTheme("light")}><Sun/>Light</DropdownMenuItem>
-                <DropdownMenuItem onClick={()=> setTheme("dark")}><Moon/>Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={()=> setTheme ("system")}><SunMoon/>System</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>setTheme("light")}>
+                    <div className='flex w-full justify-between'>
+                        {" "}
+                    Light
+                    <Sun/>
+                    </div>
+                    </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> setTheme("dark")}>
+                    <div className='flex justify-between w-full'>
+                        {" "}
+                    Dark
+                    <Moon/>
+                    </div>
+                    </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> setTheme ("system")}>
+                    <div className='flex justify-between w-full'>
+                        {" "}
+                    System
+                    <SunMoon/>
+                    </div>
+                    </DropdownMenuItem>
                 </DropdownMenuGroup>
             </DropdownMenuContent>
         </DropdownMenu>
