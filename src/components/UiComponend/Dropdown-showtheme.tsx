@@ -1,15 +1,20 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { useTheme } from 'next-themes';
 import { Moon, Sun, SunMoon } from 'lucide-react';
 
 function DropdownMenuShowTheme() {
       const {theme, setTheme}= useTheme();
+      const[mount, setMounted] = useState(false);
+      useEffect(()=>{
+        setMounted(true)
+      },[]);
+      if(!mount) return null;
   return (
       <DropdownMenu>
             <DropdownMenuTrigger>
-                {theme == "light" ? (<Sun size={18}/>) : theme =="dark" ?(<Moon size={18}/>):(<SunMoon size={18}/>)}
+                {theme == "light" ? (<Sun size={18} />) : theme =="dark" ?(<Moon size={18}/>):(<SunMoon size={18}/>)}
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
