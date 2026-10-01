@@ -1,17 +1,38 @@
 {
+    "navbar" :{
+        "logo": "Hama Kala",
+        "btn_light" : "Light",
+        "btn_dark" : "Dark",
+        "btn_system" : "System",
+        "btn_login" : "LogIn"
+    },
     "homepage":{
-        "navbar" :{
-            "logo": "Hama Kala",
-            "btn_light" : "Light",
-            "btn_dark" : "Dark",
-            "btn_system" : "System",
-            "btn_login" : "LogIn"
-        },
+
         "hero":{
             "title": "Find unique items tailored to your life styles",
             "description":"Instead of making you browse through thousands of generice items, these services analyze your style prefernces geographic and faily routines to surface high-quality distinctive goods.",
             "btn_explore" : "Explore Products",
             "btn_join": "Join Us"          
-    }
+        },
+        "features" : {
+            "subtitle" : "Features",
+            "title" : "Our Special Features",
+            "feature1" :{
+                "title":"Security",
+                "description":"Your date in this app is completely secure"
+            },
+            "feature2" :{
+                "title":"User Frindly",
+                "description":"The UI/Ux of application built to feel comfortable"
+            },
+            "feature1" :{
+                "title":"Security",
+                "description":"Your date in this app is completely secure"
+            },
+            "feature1" :{
+                "title":"Security",
+                "description":"Your date in this app is completely secure"
+            },
+        }
 }
 }
