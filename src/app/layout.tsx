@@ -15,7 +15,7 @@ const vazirmtn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-
+  
   title :{
     default :"همه کالا",
     template : "%s | همه کالا",
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${vazirmtn.className} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full bg-white flex flex-col">
         <NavebarPage/>
         {children}</body>
     </html>

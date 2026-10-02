@@ -4,7 +4,8 @@
         "btn_light" : "Light",
         "btn_dark" : "Dark",
         "btn_system" : "System",
-        "btn_login" : "LogIn"
+        "btn_login" : "LogIn",
+        "theme" : "Theme"
     },
     "homepage":{
 
@@ -25,14 +26,30 @@
                 "title":"User Frindly",
                 "description":"The UI/Ux of application built to feel comfortable"
             },
-            "feature1" :{
-                "title":"Security",
-                "description":"Your date in this app is completely secure"
+            "feature3" :{
+                "title":"Multiple language",
+                "description":"This application is avalibale in Dari, Pashto , English languages"
             },
-            "feature1" :{
-                "title":"Security",
-                "description":"Your date in this app is completely secure"
+            "feature4" :{
+                "title":"Products Variaty",
+                "description":"You can find variaty of product from different Brands around the world"
+            }
+        },
+        "categories":{
+            "title" : "products categories",
+            "cat1" :{
+                "title":"Men",
+                "description":"Fall 2026"
             },
+            "cat2" :{
+                "title":"Women",
+                "description":"Fall 2026"
+            },
+            "cat3" :{
+                "title":"Accessories",
+                "description":"Famouse Brand Around the world"
+            }
+            
         }
 }
 }

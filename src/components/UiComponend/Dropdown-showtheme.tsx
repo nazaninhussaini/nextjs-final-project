@@ -13,10 +13,10 @@ function DropdownMenuShowTheme() {
       if(!mount) return null;
   return (
       <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger className="text-gray-500">
                 {theme == "light" ? (<Sun size={18} />) : theme =="dark" ?(<Moon size={18}/>):(<SunMoon size={18}/>)}
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="text-gray-500">
                 <DropdownMenuGroup>
                 <DropdownMenuLabel>
                     Theme

@@ -6,9 +6,9 @@ function LanguageChenger() {
   
   return (
   <DropdownMenu>
-    <DropdownMenuTrigger><Languages size={18}/></DropdownMenuTrigger>
+    <DropdownMenuTrigger className="text-gray-500"><Languages size={18}/></DropdownMenuTrigger>
     <DropdownMenuGroup>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="text-gray-500">
         <DropdownMenuLabel>Lunguage | تغییر زبان</DropdownMenuLabel>
     <DropdownMenuSeparator/>
         <DropdownMenuItem>English | انگلیسی</DropdownMenuItem>
