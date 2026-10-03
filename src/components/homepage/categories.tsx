@@ -24,8 +24,8 @@ function Categories() {
         },
     ]
   return (
-    <div className='w-full max-w-6xl mx-auto mt-6 '>
-        <h1 className='text-2xl my-3 font-bold text-amber-600 text-center'>products categories</h1>
+    <div className='w-full max-w-6xl z-10 mx-auto mt-6 '>
+        <h1 className='text-4xl my-3 font-extrabold text-amber-600 text-center'>Products Categories</h1>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6'>
 

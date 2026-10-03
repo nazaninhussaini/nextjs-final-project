@@ -3,6 +3,7 @@ import React from 'react'
 import Features from '@/components/homepage/Features'
 import { title } from 'process'
 import Categories from '@/components/homepage/categories'
+import FeaturedProducts from '@/components/homepage/featuredProducts'
 
 
 export const metadata = {
@@ -15,6 +16,7 @@ function HomePage() {
       <HeroSection/>
       <Features/>
       <Categories/>
+      <FeaturedProducts/>
     </div>
   )
 }
