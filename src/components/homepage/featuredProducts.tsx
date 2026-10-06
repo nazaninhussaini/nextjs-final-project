@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from './product-card'
 import { Button } from '../ui/button'
+import SearchBtn from './search_btn'
 
 function FeaturedProducts() {
     const productsList:{id:number, name:string , price: string ,image:string }[] =[
@@ -31,14 +32,17 @@ function FeaturedProducts() {
     ]
   return (
     <div className='w-full max-w-6xl z-10 mx-auto my-8'>
-      <h1 className='text-4xl text-center text-amber-600 font-bold'>Featured Products</h1>
-      <div className='w-full flex gap-3 justify-between'>
+      <h1 className='text-4xl text-center text-amber-600 font-bold'>Featured Products</h1>      
+      <div className='w-full items-center flex gap-3 justify-between'>
         <div className='my-6 space-x-2 flex'>
             <Button variant="link" >All Products</Button>
             <Button variant="link" >Men</Button>
             <Button variant="link" >WoMen</Button>
             <Button variant="link" >Shoes</Button>
             <Button variant="link" >Watches</Button>
+        </div>
+        <div className='flex items-center gap-4'>
+          <SearchBtn/>
         </div>
       </div>
       <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
