@@ -6,8 +6,8 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/colla
 function DashbordSideBar() {
   return (
     <div >
-      <Sidebar>
-        <SidebarHeader>
+      <Sidebar className='mt-6 pl-1.5'>
+        <SidebarHeader className='w-full font-bold text-amber-600 text-3xl'>
             WorkSpace
         </SidebarHeader>
         <SidebarContent>
@@ -109,7 +109,6 @@ function DashbordSideBar() {
             <SidebarContent>
                 <SidebarMenuItem className='flex gap-1 justify-between items-center'>
                     <div className='flex gap-1.5 items-center'>
-
                     <User size={18}/>
                     <div className='flex flex-col'>
                         <span className='text-sm font-semibold'>Nazanin</span>

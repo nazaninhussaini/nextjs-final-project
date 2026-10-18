@@ -7,9 +7,9 @@ function DashboardHeadar() {
   return (
     <div className='flex w-full items-center py-4 px-3 border-b border-gray-400 justify-between'>
       <div className='w-full flex justify-between items-center'>
-        <div className='flex gap-1 items-center'>
-            <SidebarTrigger />
-            <h1 className='text-xl font-bold'>Final Appliction</h1>
+        <div className='flex gap-1  items-center'>
+            <SidebarTrigger size={"icon"}/>
+            <h1 className='text-xl font-bold text-amber-600'>Final Appliction</h1>
         </div>
         <div className='flex gap-1 items-center'>
             <DropdownMenuShowTheme/>

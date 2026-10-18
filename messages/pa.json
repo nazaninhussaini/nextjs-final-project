@@ -48,7 +48,18 @@
                 "title":"آرایشي او روغتیایي",
                 "description":"نامتو برانډونه"
             }
-            
-        }
+        },
+          "products":{
+            "title": "غوره شوي محصولات",
+            "categories":{
+                "men": "سري",
+                "women": "ښځی ",
+                "all_products":"تول محصولات",
+                "shoes": "بوټان",
+                "watches" : "ساعتونه",
+                "search": "لتون",
+                "filter" : "فلټر"
+            }
+        }  
 }
 }

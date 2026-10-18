@@ -1,10 +1,11 @@
-import Navbar from '@/components/UiComponend/navbar'
+
+import NavebarPage from '@/components/shared/navbar'
 import React from 'react'
 
 function MainLayout({childern}:{childern:React.ReactNode}) {
   return (
     <div className='w-full relative'>
-      <Navbar/>
+      {/* <NavebarPage/> */}
       {childern}
     </div>
   )

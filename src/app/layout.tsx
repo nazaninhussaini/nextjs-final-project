@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${vazirmtn.className} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white flex flex-col">
-        <NavebarPage/>
+        {/* <NavebarPage/> */}
         {children}</body>
     </html>
   );

@@ -1,5 +1,6 @@
 import DashboardHeadar from "@/components/dashbord/dashboard-headar"
 import DashbordSideBar from "@/components/dashbord/Dashbord-sidbar"
+import NavebarPage from "@/components/shared/navbar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 
 
@@ -11,6 +12,7 @@ function DashboardLayout({children}:{children:React.ReactNode}) {
         <DashbordSideBar/>
         <div className="flex w-full gap-2 justify-between flex-col">
           <DashboardHeadar/>
+          {/* <NavebarPage/> */}
       {children}
         </div>
         </SidebarProvider>

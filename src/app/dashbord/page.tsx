@@ -3,7 +3,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='w-full min-h-screen px-4 '>
+    <div className='w-full min-h-screen  px-4 '>
       <div className='w-full grid grid-cols-1 gap-3 md:grid-cols-4'>
         <Card>
           <CardHeader>
