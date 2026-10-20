@@ -1,7 +1,7 @@
 import React from 'react'
 import { SidebarTrigger } from '../ui/sidebar'
-import DropdownMenuShowTheme from '../UiComponend/Dropdown-showtheme'
-import LanguageChenger from '../UiComponend/language-chenger'
+import DropdownMenuShowTheme from '../shared/Dropdown-showtheme'
+import LanguageChenger from '../shared/language-chenger'
 
 function DashboardHeadar() {
   return (

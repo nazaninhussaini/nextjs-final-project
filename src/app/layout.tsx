@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
 // import NavbarPage from "@/components/UiComponend/navbar";
 import NavebarPage from "@/components/shared/navbar";
+import { ThemeProvider } from "next-themes";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({
   variable: "--font-Inter",
@@ -33,7 +35,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-white flex flex-col">
         {/* <NavebarPage/> */}
-        {children}</body>
+        <ThemeProvider attribute="class">
+          <NextIntlClientProvider>
+        {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
+        </body>
     </html>
   );
 }
