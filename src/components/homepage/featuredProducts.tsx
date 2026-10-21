@@ -1,9 +1,16 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import ProductCard from './product-card'
 import { Button } from '../ui/button'
 import SearchBtn from './search_btn'
+import { useTranslations } from 'next-intl'
+import Filterbtn from './filter_btn'
+import FilterProduct from './filterProduct'
 
 function FeaturedProducts() {
+  const [showInput, setShowInput] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
+   const t =  useTranslations("homepage.products");
     const productsList:{id:number, name:string , price: string ,image:string }[] =[
         {
             id: 1,
@@ -32,19 +39,23 @@ function FeaturedProducts() {
     ]
   return (
     <div className='w-full max-w-6xl z-10 mx-auto my-8'>
-      <h1 className='text-4xl text-center text-amber-600 font-bold'>Featured Products</h1>      
+      <h1 className='text-4xl text-center text-amber-600 font-bold'>{t("title")}</h1>      
       <div className='w-full items-center flex gap-3 justify-between'>
         <div className='my-6 space-x-2 flex'>
-            <Button variant="link" >All Products</Button>
-            <Button variant="link" >Men</Button>
-            <Button variant="link" >WoMen</Button>
-            <Button variant="link" >Shoes</Button>
-            <Button variant="link" >Watches</Button>
+            <Button variant="link" >{t("categories.men")}</Button>
+            <Button variant="link" >{t("categories.women")}</Button>
+            <Button variant="link" >{t("categories.shoes")}</Button>
+            <Button variant="link" >{t("categories.watches")}</Button>
+            <Button variant="link" >{t("categories.all_products")}</Button>
         </div>
         <div className='flex items-center gap-4'>
-          <SearchBtn/>
+          <SearchBtn text = {t("categories.search")} showInput ={showInput} setShowInput ={setShowInput}/>
+          <Filterbtn showFilter ={showFilter} setShowFilter ={setShowFilter}/>
         </div>
       </div>
+        <div className='w-full'>
+          <FilterProduct showFilter ={showFilter}/>
+        </div>
       <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {productsList.map((product)=>(
             <ProductCard products = {product} key={product.id}/>

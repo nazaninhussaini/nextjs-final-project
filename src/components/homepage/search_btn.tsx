@@ -4,8 +4,8 @@ import { Button } from '../ui/button'
 import { Search } from 'lucide-react'
 import { Input } from '../ui/input'
 
-function SearchBtn() { 
-    const[showInput,setShowInput ]= useState(false);
+function SearchBtn({text, showInput , setShowInput } :{text:string, showInput:boolean , setShowInput:any }) { 
+
   return (
     <div className='flex w-full flex-col gap-4'>
        <Button
@@ -15,7 +15,7 @@ function SearchBtn() {
         Search
        </Button>
 
-       <Input className={`w-fullpy-2 ${showInput? "hidden" : "block" } `}/>
+       <Input className={`w-full py-2 ${showInput? "hidden" : "block" } `}/>
     </div>
   )
 }
