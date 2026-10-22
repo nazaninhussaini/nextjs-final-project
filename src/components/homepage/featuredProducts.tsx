@@ -6,10 +6,11 @@ import SearchBtn from './search_btn'
 import { useTranslations } from 'next-intl'
 import Filterbtn from './filter_btn'
 import FilterProduct from './filterProduct'
+import { Input } from '../ui/input'
 
 function FeaturedProducts() {
-  const [showInput, setShowInput] = useState(false);
-  const [showFilter, setShowFilter] = useState(false);
+  const [showInput, setShowInput] = useState(true);
+  const [showFilter, setShowFilter] = useState(true);
    const t =  useTranslations("homepage.products");
     const productsList:{id:number, name:string , price: string ,image:string }[] =[
         {
@@ -50,15 +51,18 @@ function FeaturedProducts() {
         </div>
         <div className='flex items-center gap-4'>
           <SearchBtn text = {t("categories.search")} showInput ={showInput} setShowInput ={setShowInput}/>
-          <Filterbtn showFilter ={showFilter} setShowFilter ={setShowFilter}/>
+          <Filterbtn text ={t("categories.filter")} showFilter ={showFilter} setShowFilter ={setShowFilter}/>
         </div>
       </div>
         <div className='w-full'>
           <FilterProduct showFilter ={showFilter}/>
         </div>
+        <div className='w-full mb-3 -mt-3'>
+          <Input type='text' placeholder={t("categories.search")} className={`w-full py-3  ${showInput? "hidden" : "block" } `}/>
+        </div>
       <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-        {productsList.map((product)=>(
-            <ProductCard products = {product} key={product.id}/>
+        {productsList.map((products)=>(
+            <ProductCard products = {products} key={products.id}/>
         ))}
       </div>
     </div>

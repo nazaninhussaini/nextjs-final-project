@@ -59,7 +59,38 @@
                 "watches" : "ساعتونه",
                 "search": "لتون",
                 "filter" : "فلټر"
+            },
+                "filterProducts": {
+                "sortbay":{
+                    "title" :"ترتیب بر اساس",
+                    "defualt": "پیش فرض",
+                    "popularity":"شهرت",
+                    "newnees": "جدید",
+                    "price_low":"از ارزان به قیمت",
+                    "price_high":"از قیمت به ارزان"
+                },
+                "price":{
+                    "title" :"قیمت",
+                    "all": "همه"
+                },
+                "colors":{
+                    "title": "رنگ ها",
+                    "black" :"سیاه",
+                    "red": "سرخ",
+                    "green": "سبز",
+                    "blue":"ابی",
+                    "gray": "خاکستری",
+                    "white":"سفید"
+                },
+                "tages":{
+                    "title":"انواع و اقسام",
+                    "fashion":"مد روز",
+                    "lifestyle":"به سبک زندگی",
+                    "hazaragi":"هزارگی",
+                    "crafts":"صنایع دستی"
+                }
             }
+            
         }  
 }
 }

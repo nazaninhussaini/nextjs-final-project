@@ -60,6 +60,36 @@
                 "watches" : "Watches",
                 "search": "Search",
                 "filter" : "Filter"
+            },
+            "filterProducts": {
+                "sortby":{
+                    "title" :"Sort By",
+                    "defualt": "Defualt",
+                    "popularity":"Popularity",
+                    "newnees": "Newnees",
+                    "price_low":"PRICE: Low to High",
+                    "price_high":"PRICE: High to Low"
+                },
+                "price":{
+                    "title" :"Price",
+                    "all": "ALL"
+                },
+                "colors":{
+                    "title": "Colors",
+                    "black" :"Black",
+                    "red": "Red",
+                    "green": "Green",
+                    "blue":"Blue",
+                    "gray": "Gray",
+                    "white":"White"
+                },
+                "tages":{
+                    "title":"Tages",
+                    "fashion":"Fashion",
+                    "lifestyle":"LifeStyle",
+                    "hazaragi":"Hazaragi",
+                    "crafts":"Crafts"
+                }
             }
         }
 }

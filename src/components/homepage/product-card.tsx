@@ -1,10 +1,14 @@
 import React from 'react'
 import { Card, CardContent, CardHeader } from '../ui/card'
 import Image from 'next/image'
+import Link from 'next/link'
 
-function ProductCard({products} : {products: {name:string , price:string ,image: string}}) {
+
+function ProductCard({products} : {products:{id:number, name:string , price:string ,image: string}}) {
   return (
-  <Card className='p-0 '>
+    <Link href={`/products/${products.id}`}>
+    
+    <Card className='p-0 '>
     <CardHeader className='p-0 group relative'>
       <Image src={products.image} alt={products.name} height={700} width={700}  
       className='h-80 object-cover'
@@ -18,6 +22,7 @@ function ProductCard({products} : {products: {name:string , price:string ,image:
       <span className='text-sm text-gray-400'>{products.price}</span>
     </CardContent>
   </Card>
+  </Link>
   )
 }
 
