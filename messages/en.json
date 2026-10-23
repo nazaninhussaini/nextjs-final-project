@@ -60,37 +60,69 @@
                 "watches" : "Watches",
                 "search": "Search",
                 "filter" : "Filter"
+            }
+        },
+        "filter": {
+            "sortby":{
+                "title" :"Sort By",
+                "defualt": "Defualt",
+                "popularity":"Popularity",
+                "newnees": "Newnees",
+                "price_low":"PRICE: Low to High",
+                "price_high":"PRICE: High to Low"
             },
-            "filterProducts": {
-                "sortby":{
-                    "title" :"Sort By",
-                    "defualt": "Defualt",
-                    "popularity":"Popularity",
-                    "newnees": "Newnees",
-                    "price_low":"PRICE: Low to High",
-                    "price_high":"PRICE: High to Low"
-                },
-                "price":{
-                    "title" :"Price",
-                    "all": "ALL"
-                },
-                "colors":{
-                    "title": "Colors",
-                    "black" :"Black",
-                    "red": "Red",
-                    "green": "Green",
-                    "blue":"Blue",
-                    "gray": "Gray",
-                    "white":"White"
-                },
-                "tages":{
-                    "title":"Tages",
-                    "fashion":"Fashion",
-                    "lifestyle":"LifeStyle",
-                    "hazaragi":"Hazaragi",
-                    "crafts":"Crafts"
+            "price":{
+                "title" :"Price",
+                "all": "ALL"
+            },
+            "colors":{
+                "title": "Colors",
+                "black" :"Black",
+                "red": "Red",
+                "green": "Green",
+                "blue":"Blue",
+                "gray": "Gray",
+                "white":"White"
+            },
+            "brands":{
+                "title":"Tages",
+                "fashion":"Fashion",
+                "lifestyle":"LifeStyle",
+                "hazaragi":"Hazaragi",
+                "crafts":"Crafts"
+            }
+        }
+    },
+    "dashboard":{
+        "header":{
+            "title" :"Online Shopping"
+        },
+        "sidbar":{
+            "title" : "Dashboard",
+            "products":{
+                "title" :"Products",
+                "add" :"Add Products",
+                "view" :"View Products",
+                "manage":"Manage Products"
+            },
+            "users":{
+                "title": "Users",
+                "add_User":"Add User",
+                "users":"Users"
+            },
+            "reviews":{
+                "title":"product Reviews",
+                "manage" :"Manage Reviews"
+            },
+            "reporst" :{
+                "title" : "Reporst",
+                "report" :{
+                    "title" : "Report",
+                    "daily" :"Daily Report",
+                    "monthly" :"Monthly Report"
                 }
             }
         }
-}
+    }
+
 }

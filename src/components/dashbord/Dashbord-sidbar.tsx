@@ -1,30 +1,38 @@
 import React from 'react'
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
-import { Book, ChevronRight, Eye, Hourglass, House, LayoutDashboard, LogOut, Package, PackagePlus, ShoppingBasket, Star, Timer, User, UserPlus, Users } from 'lucide-react'
+import { Book, ChevronRight, Eye, Hourglass, House, LayoutDashboard, LogOut, Package, PackagePlus, PackagePlusIcon, PackageXIcon, ShoppingBag, ShoppingBasket, ShoppingCart, ShoppingCartPlus, Star, Timer, User, UserPlus, Users } from 'lucide-react'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible'
+import { cookies } from 'next/headers'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-function DashbordSideBar() {
+async function DashbordSideBar() {
+  const t = await getTranslations("dashboard.sidbar")
+  const cookiesInfo = await cookies();
+  const locale = cookiesInfo.get("locale")?.value || "fa";
   return (
     <div >
-      <Sidebar className='mt-6 pl-1.5'>
-        <SidebarHeader className='w-full font-bold text-amber-600 text-3xl'>
-            WorkSpace
+      <Sidebar side={locale === "en"? "left": 'right'} className='mt-6 pl-1.5'>
+        <SidebarHeader >
+            <div className='w-full items-center font-bold text-amber-600 text-2xl flex gap-1.5'>
+              <ShoppingBag size={18}/>
+              {t("title")}
+            </div>
         </SidebarHeader>
         <SidebarContent>
             <SidebarGroupLabel>
-                Main Content
+                {t("products.title")}
             </SidebarGroupLabel>
             <SidebarGroup className='flex flex-col gap-2'>
                 <SidebarMenuItem>
-                    <SidebarMenuButton><LayoutDashboard/> Dashbord</SidebarMenuButton>
+                    <SidebarMenuButton><LayoutDashboard/> {t("title")}</SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
               <Collapsible>
               <CollapsibleTrigger className="w-full">
-                    <SidebarMenuButton className='flex justify-between items-center'>
+                    <SidebarMenuButton className='flex justify-between '>
                         <div className='flex gap-1.5'>
-
-                        <ShoppingBasket/> Products
+                        <ShoppingBasket/>  {t("products.title")}
                         </div>
                         <ChevronRight/>
                         </SidebarMenuButton>
@@ -32,10 +40,14 @@ function DashbordSideBar() {
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
               
                 <SidebarMenuButton>
-                  <PackagePlus/>  Add Product
+                  <PackagePlus/>   {t("products.add")}
                 </SidebarMenuButton>
                 <SidebarMenuButton>
-                  <Package/>  View Products
+                  <Package/>   {t("products.view")}
+                </SidebarMenuButton>
+
+                <SidebarMenuButton>
+                  <PackageXIcon/>  {t("products.manage")}
                 </SidebarMenuButton>
 
               </CollapsibleContent>
@@ -46,14 +58,14 @@ function DashbordSideBar() {
               <CollapsibleTrigger className="w-full">
                     <SidebarMenuButton className='flex justify-between items-center'>
                         <div className='flex gap-1.5'>
-                        <User/> Users
+                        <User/>  {t("users.title")}
                         </div>
                         <ChevronRight/>
                         </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
-              <SidebarMenuButton><UserPlus/> Add Users</SidebarMenuButton>
-              <SidebarMenuButton><Users/> Users</SidebarMenuButton>
+              <SidebarMenuButton><UserPlus/> {t("users.add_User")}</SidebarMenuButton>
+              <SidebarMenuButton><Users/> {t("users.users")}</SidebarMenuButton>
 
               </CollapsibleContent>
               </Collapsible>
@@ -63,14 +75,14 @@ function DashbordSideBar() {
                     <CollapsibleTrigger className="w-full">
                     <SidebarMenuButton className='flex justify-between items-center'>
                         <div className='flex gap-1.5'>
-                      <Star/>  Procut Reviews
+                      <Star/> {t("reviews.title")}
                         </div>
                         <ChevronRight/>
                     </SidebarMenuButton>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="ml-6">
                     <SidebarMenuButton>
-                       <Eye/> Manage Riviews
+                       <Eye/> {t("reviews.manage")}
                     </SidebarMenuButton>
                     </CollapsibleContent>
                     </Collapsible>
@@ -78,24 +90,24 @@ function DashbordSideBar() {
             </SidebarGroup>
         {/* report */}
 
-        <SidebarGroupLabel>Reporst</SidebarGroupLabel>
+        <SidebarGroupLabel>{t("reporst.title")}</SidebarGroupLabel>
         <SidebarGroup>
             <SidebarMenuItem>
                 <Collapsible>
                 <CollapsibleTrigger className="w-full">
                 <SidebarMenuButton className='flex justify-between items-center'>
                     <div className='flex gap-1.5'>
-                   <Book/> Report
+                   <Book/> {t("reporst.report.title")}
                     </div>
                     <ChevronRight/>
                 </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
                 <SidebarMenuButton>
-                  <Hourglass/>  Daily Report
+                  <Hourglass/> {t("reporst.report.daily")}
                 </SidebarMenuButton>
                 <SidebarMenuButton>
-                   <Timer/> Monthly Report
+                   <Timer/> {t("reporst.report.monthly")}
                 </SidebarMenuButton>
                 </CollapsibleContent>
                 </Collapsible>
@@ -107,12 +119,12 @@ function DashbordSideBar() {
 
         <SidebarFooter>
             <SidebarContent>
-                <SidebarMenuItem className='flex gap-1 justify-between items-center'>
+                <SidebarMenuItem className='flex gap-1 mb-10 justify-between items-center'>
                     <div className='flex gap-1.5 items-center'>
-                    <User size={18}/>
+                    <User size={24}/>
                     <div className='flex flex-col'>
-                        <span className='text-sm font-semibold'>Nazanin</span>
-                        <span className='text-xs font-extralight'>nazanin@gmail.com</span>
+                        <span className='text-sm font-semibold'>Nazanin Hussaini</span>
+                        <span className='text-xs hover:underline hover:text-amber-600 font-extralight'>nazaninhussaini@gmail.com</span>
                     </div>
                     </div>
                     <div>

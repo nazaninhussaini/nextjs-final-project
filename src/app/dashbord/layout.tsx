@@ -1,18 +1,21 @@
 import DashboardHeadar from "@/components/dashbord/dashboard-headar"
 import DashbordSideBar from "@/components/dashbord/Dashbord-sidbar"
-import NavebarPage from "@/components/shared/navbar"
 import { SidebarProvider } from "@/components/ui/sidebar"
+import { cookies } from "next/headers"
 
 
-function DashboardLayout({children}:{children:React.ReactNode}) {
+async function DashboardLayout({children}:{children:React.ReactNode}) {
+
+  const cookiesInfo = await cookies();
+  const locale = cookiesInfo.get("locale")?.value ||"fa"
   return (
     <div className="w-full min-h-screen  flex">
-        <SidebarProvider>
+        <SidebarProvider dir={locale=== "en" ? "ltr": "rtl"}>
 
         <DashbordSideBar/>
         <div className="flex w-full gap-2 justify-between flex-col">
-          <DashboardHeadar/>
-          {/* <NavebarPage/> */}
+        
+
       {children}
         </div>
         </SidebarProvider>

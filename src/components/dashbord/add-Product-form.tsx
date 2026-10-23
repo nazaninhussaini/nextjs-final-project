@@ -7,7 +7,7 @@ import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
 import { Select, SelectContent, SelectGroup, SelectItem } from '../ui/select'
 import { SelectTrigger } from "../ui/select"
-import { addProduct } from '@/lib/product/addproduct.action'
+import { addProduct } from '@/lib/product/addproduct.action';
 
 function AddProductForm() {
    const [date,action]=  useActionState(addProduct,{

@@ -59,38 +59,68 @@
                 "watches" : "ساعتونه",
                 "search": "لتون",
                 "filter" : "فلټر"
+            }
+        }, 
+        "filter": {
+        "sortby":{
+            "title" :"ترتیب بر اساس",
+            "defualt": "پیش فرض",
+            "popularity":"شهرت",
+            "newnees": "جدید",
+            "price_low":"از ارزان به قیمت",
+            "price_high":"از قیمت به ارزان"
+        },
+        "price":{
+            "title" :"قیمت",
+            "all": "همه"
+        },
+        "colors":{
+            "title": "رنگ ها",
+            "black" :"سیاه",
+            "red": "سرخ",
+            "green": "سبز",
+            "blue":"ابی",
+            "gray": "خاکستری",
+            "white":"سفید"
+        },
+        "brands":{
+            "title":"برند ها",
+            "fashion":"فیشن",
+            "lifestyle":"به سبک زندگی",
+            "hazaragi":"هزارگی",
+            "crafts":"صنایع دستی"
+        }
+    }
+},
+"dashboard":{
+        "header":{
+            "title" :"آنلاین پلرونه"
+        },
+        "sidbar":{
+            "title" : "دیشبورډ",
+            "products":{
+                "title" :"محصولات",
+                "add" :"ډ محصولات اضافه کول",
+                "view" :"دیدن محصولات",
+                "manage":"د محصولاتو اداره کول"
             },
-                "filterProducts": {
-                "sortbay":{
-                    "title" :"ترتیب بر اساس",
-                    "defualt": "پیش فرض",
-                    "popularity":"شهرت",
-                    "newnees": "جدید",
-                    "price_low":"از ارزان به قیمت",
-                    "price_high":"از قیمت به ارزان"
-                },
-                "price":{
-                    "title" :"قیمت",
-                    "all": "همه"
-                },
-                "colors":{
-                    "title": "رنگ ها",
-                    "black" :"سیاه",
-                    "red": "سرخ",
-                    "green": "سبز",
-                    "blue":"ابی",
-                    "gray": "خاکستری",
-                    "white":"سفید"
-                },
-                "tages":{
-                    "title":"انواع و اقسام",
-                    "fashion":"مد روز",
-                    "lifestyle":"به سبک زندگی",
-                    "hazaragi":"هزارگی",
-                    "crafts":"صنایع دستی"
+            "users":{
+                "title": "کاربران",
+                "add_User":"اضافه کردن کاربر",
+                "users":"کاربر"
+            },
+            "reviews":{
+                "title":"برسی محصولات",
+                "manage" :"جمع آوری محصول"
+            },
+            "reporst" :{
+                "title" : "گزارشات",
+                "report" :{
+                    "title" : "گزارش ها",
+                    "daily" :"گزارش های روزانه",
+                    "monthly" :"گزارش های ماهانه"
                 }
             }
-            
-        }  
-}
+        }
+    }
 }
