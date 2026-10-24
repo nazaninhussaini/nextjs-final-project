@@ -122,6 +122,33 @@
                     "monthly" :"Monthly Report"
                 }
             }
+        },
+        "addProduct":{
+            "pleceholder":{
+                "name":"Product Name",
+                "price": "Product Price",
+                "desc": "Product Description",
+                "qty" :" Quantity",
+                "alert_qty":"Alert Quantity",
+                "brand":"Product Brand",
+                "color":"product Color",
+                "size":"Product Size"
+
+            },
+            "labels":{
+               "name":"Product Name",
+                "price": "Product Price",
+                "desc": "Product Description",
+                "qty" :" Quantity",
+                "alert_qty":"Alert Quantity",
+                "brand":"Product Brand",
+                "color":"product Color",
+                "size":"Product Size",
+                "man_date":"Man.Date",
+                "exp_date":"Exp.Date",
+                "back_image":"Back.Image", 
+                "front_image":"Front.Image" 
+            }
         }
     }
 

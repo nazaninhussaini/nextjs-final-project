@@ -1,10 +1,11 @@
 import React from 'react'
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
 import { Book, ChevronRight, Eye, Hourglass, House, LayoutDashboard, LogOut, Package, PackagePlus, PackagePlusIcon, PackageXIcon, ShoppingBag, ShoppingBasket, ShoppingCart, ShoppingCartPlus, Star, Timer, User, UserPlus, Users } from 'lucide-react'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible'
 import { cookies } from 'next/headers'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import Link from 'next/link'
 
 async function DashbordSideBar() {
   const t = await getTranslations("dashboard.sidbar")
@@ -14,15 +15,20 @@ async function DashbordSideBar() {
     <div >
       <Sidebar side={locale === "en"? "left": 'right'} className='mt-6 pl-1.5'>
         <SidebarHeader >
+        <SidebarContent>
+          <Link href="/dashbord">
+          
             <div className='w-full items-center font-bold text-amber-600 text-2xl flex gap-1.5'>
               <ShoppingBag size={18}/>
               {t("title")}
             </div>
+          </Link>
+          </SidebarContent>
         </SidebarHeader>
-        <SidebarContent>
             <SidebarGroupLabel>
                 {t("products.title")}
             </SidebarGroupLabel>
+            <SidebarContent>
             <SidebarGroup className='flex flex-col gap-2'>
                 <SidebarMenuItem>
                     <SidebarMenuButton><LayoutDashboard/> {t("title")}</SidebarMenuButton>
@@ -38,10 +44,14 @@ async function DashbordSideBar() {
                         </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
-              
+              <Link href="/dashbord/addProduct">
+              <SidebarMenu>
                 <SidebarMenuButton>
                   <PackagePlus/>   {t("products.add")}
                 </SidebarMenuButton>
+              </SidebarMenu>
+              </Link>
+
                 <SidebarMenuButton>
                   <Package/>   {t("products.view")}
                 </SidebarMenuButton>

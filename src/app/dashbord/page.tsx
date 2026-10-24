@@ -8,6 +8,7 @@ function page() {
       <DashbordSideBar/>
       <div className='w-full justify-between'>
         <DashboardHeadar/>
+        <h1>this is the min dashbord</h1>
       </div>
     </div>
   )
