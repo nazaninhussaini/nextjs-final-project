@@ -124,6 +124,8 @@
             }
         },
         "addProduct":{
+            "title" :"Creat New Product",
+            "desc" :"Insert Products that has recently added to the store",
             "pleceholder":{
                 "name":"Product Name",
                 "price": "Product Price",
@@ -146,8 +148,8 @@
                 "size":"Product Size",
                 "man_date":"Man.Date",
                 "exp_date":"Exp.Date",
-                "back_image":"Back.Image", 
-                "front_image":"Front.Image" 
+                "back_image":"product Back.Image", 
+                "front_image":"product Front.Image" 
             }
         }
     }
