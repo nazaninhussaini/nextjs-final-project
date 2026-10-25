@@ -1,28 +1,38 @@
 "use client"
-import React, { useActionState } from 'react'
+import React, { useState } from 'react'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
-import { login } from '@/lib/auth/signin.action'
+import { Eye, EyeOff } from 'lucide-react'
+import { useLocale } from 'next-intl'
 
-function SignInForm() {
-    const[data,action,pending]= useActionState(login,{
-        state:false,
-        message:""
-    })
+function LoginForm() {
+    const locale = useLocale();
+    const [show , setShow] = useState(false);
   return (
-     <form action={action} className='w-full grid gap-3'>
+   <form action="" className='w-full grid gap-3'>
                     <div className='grid gap-2'>
                         <Label htmlFor = "email">Eamil</Label>
                         <Input type='email' id='email' required name='email' />
                     </div>
-                    <div className='grid gap-2'>
-                        <Label htmlFor = "password">Password</Label>
-                        <Input type='password' id='password' required name='password' />
+                     <div className=' relative'>
+                      <div className='grid gap-2 relative'>
+                        <Label htmlFor = "password"> Password</Label>
+                        <Input type={show ? "text" : "password"} id='password' required name='password' />
                     </div>
-                    <Button disabled={pending} type='submit'>{pending?"signIng...": "Login"}</Button>
+                    <div className={`absolute top-7 ${locale == "en" ? "right-2" :" left-2"}`}>{show ? <Eye size={18} onClick={()=> setShow (!show)}/> : <EyeOff size={18} onClick={()=> setShow(!show)}/>}</div>
+                    </div>
+                 
+                    <div className=' relative'>
+                      <div className='grid gap-2 relative'>
+                        <Label htmlFor = "password">Confirm Password</Label>
+                        <Input type={show ? "text" : "password"} id='password' required name='password' />
+                    </div>
+                    <div className={`absolute top-7 ${locale == "en" ? "right-2" :" left-2"}`}>{show ? <Eye size={18} onClick={()=> setShow (!show)}/> : <EyeOff size={18} onClick={()=> setShow(!show)}/>}</div>
+                    </div>
+                    <Button type='submit'>Sign in </Button>
                 </form>
   )
 }
 
-export default SignInForm
+export default LoginForm

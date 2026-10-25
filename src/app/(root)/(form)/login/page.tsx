@@ -1,21 +1,19 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import LoginForm from '@/components/UiComponend/sign_in_form'
+import Link from 'next/link'
 import React from 'react'
-import {Card , CardHeader, CardContent,CardTitle,CardDescription} from "@/components/ui/card";
 
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import SignInForm from '@/components/UiComponend/sign_in_form';
 function page() {
   return (
-    <div className='w-full h-screen flex justify-center items-center'>
+    
+        <div className='w-full h-screen flex justify-center items-center'>
         <Card className = "w-1/4 py-2">
             <CardHeader>
                 <CardTitle className ="text-3xl font-semibold">Sign In</CardTitle>
                 <CardDescription>Login to the platform using email and password</CardDescription>
             </CardHeader>
             <CardContent>
-               <SignInForm/>
+               <LoginForm/>
                 <div>
                     <Link href="forgot-password" className='hover:cursor-pointer hover:text-gray-500' >Forgot Password</Link>
                 </div>
@@ -26,6 +24,7 @@ function page() {
             </CardContent>
         </Card>
     </div>
+    
   )
 }
 
