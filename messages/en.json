@@ -144,12 +144,24 @@
                 "qty" :" Quantity",
                 "alert_qty":"Alert Quantity",
                 "brand":"Product Brand",
-                "color":"product Color",
+                "color":{
+                    "black" : "Black",
+                    "red" : "Red",
+                    "white" : "White",
+                    "blue" : "Blue",
+                    "green" : "Green",
+                    "pink" : "Pink",
+                    "purple" : "Purple",
+                    "brown" : "Brown",
+                    "gray" : "Gray",
+                    "yellow" : "Yellow",
+                    "orange" : "Orange"
+                },
                 "size":"Product Size",
                 "man_date":"Man.Date",
                 "exp_date":"Exp.Date",
-                "back_image":"product Back.Image", 
-                "front_image":"product Front.Image" 
+                "back_image":" Back Image", 
+                "front_image":" Front Image" 
             }
         }
     }

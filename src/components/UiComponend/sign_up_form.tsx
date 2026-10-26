@@ -26,14 +26,6 @@ function SignUpForm() {
                     </div>
                     <div className={`absolute top-7 ${locale == "en" ? "right-2" :" left-2"}`}>{show ? <Eye size={18} onClick={()=> setShow (!show)}/> : <EyeOff size={18} onClick={()=> setShow(!show)}/>}</div>
                     </div>
-                 
-                    <div className=' relative'>
-                      <div className='grid gap-2 relative'>
-                        <Label htmlFor = "password">Confirm Password</Label>
-                        <Input type={show ? "text" : "password"} id='password' required name='password' />
-                    </div>
-                    <div className={`absolute top-7 ${locale == "en" ? "right-2" :" left-2"}`}>{show ? <Eye size={18} onClick={()=> setShow (!show)}/> : <EyeOff size={18} onClick={()=> setShow(!show)}/>}</div>
-                    </div>
                     <Button  type='submit'>Creat Acuant</Button>
 
                 </form>

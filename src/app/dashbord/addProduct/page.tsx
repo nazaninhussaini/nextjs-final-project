@@ -1,11 +1,8 @@
 import AddProductForm from '@/components/dashbord/add-Product-form'
 import DashboardHeadar from '@/components/dashbord/dashboard-headar'
 import DashbordSideBar from '@/components/dashbord/Dashbord-sidbar'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {  useTranslations } from 'next-intl'
-import { title } from 'process'
-import React from 'react'
+
 
 export const metadate ={
   title:"محصول جدید"
