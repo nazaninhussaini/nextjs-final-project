@@ -138,6 +138,7 @@
 
             },
             "labels":{
+                "type":"Product Type",
                "name":"Product Name",
                 "price": "Product Price",
                 "desc": "Product Description",
