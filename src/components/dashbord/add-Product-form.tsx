@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 
 function AddProductForm() {
+  const [productType , setProductType] = useState("cloth"); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
       const t = useTranslations("dashboard.addProduct")
@@ -47,15 +48,23 @@ function AddProductForm() {
 
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
-              <Select>
+              <Select value={productType} onValueChange={()=>setProductType}>
                 <SelectTrigger className="w-full">Select Type</SelectTrigger>
                 <SelectContent className="w-full">
-                  <SelectItem value="cloth">Cloth</SelectItem>
-                  <SelectItem value="shoes">Shoes</SelectItem>
-                  <SelectItem value="cosmetic_items">Cosmetic Items</SelectItem>
+                  <SelectItem className="w-full" value="cloth">Cloth</SelectItem>
+                  <SelectItem className="w-full" value="shoes">Shoes</SelectItem>
+                  <SelectItem className="w-full" value="cosmetic_items">Cosmetic Items</SelectItem>
                 </SelectContent>
               </Select>
             </div>
+
+            {/* man_data */}
+
+            <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
+              <Label></Label>
+            </div>
+
+            {/* exp-data */}
 
             {/* colors */}
             <div className='flex items-center flex-wrap gap-2'>
