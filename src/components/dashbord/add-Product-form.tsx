@@ -6,9 +6,11 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Button } from '../ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
+import { Popover, PopoverTrigger } from '@base-ui/react';
+import { Calendar, Calendar1Icon } from 'lucide-react';
 
 function AddProductForm() {
-  const [productType , setProductType] = useState("cloth"); 
+  const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
       const t = useTranslations("dashboard.addProduct")
@@ -48,7 +50,8 @@ function AddProductForm() {
 
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
-              <Select value={productType} onValueChange={()=>setProductType}>
+              <Select value={productType} 
+              onValueChange={(value)=>setProductType(value)}>
                 <SelectTrigger className="w-full">Select Type</SelectTrigger>
                 <SelectContent className="w-full">
                   <SelectItem className="w-full" value="cloth">Cloth</SelectItem>
@@ -61,7 +64,15 @@ function AddProductForm() {
             {/* man_data */}
 
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
-              <Label></Label>
+              <Label> Man Date</Label>
+              <Popover>
+                <PopoverTrigger>
+                  <Calendar1Icon/>
+                </PopoverTrigger>
+                <Popovercontent>
+                  <Calendar/>
+                </Popovercontent>
+              </Popover>
             </div>
 
             {/* exp-data */}
