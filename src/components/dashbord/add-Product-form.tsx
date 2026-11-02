@@ -6,10 +6,15 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Button } from '../ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
-import { Popover, PopoverTrigger } from '@base-ui/react';
-import { Calendar, Calendar1Icon } from 'lucide-react';
 
-function AddProductForm() {
+import { Calendar, Calendar1Icon } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import ShamsiDatePicker from './shamsi-date-picker';
+
+function AddProductForm() { 
+
+   const [manDate , setManDate]=  useState<Date>()
+
   const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
@@ -65,14 +70,9 @@ function AddProductForm() {
 
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
               <Label> Man Date</Label>
-              <Popover>
-                <PopoverTrigger>
-                  <Calendar1Icon/>
-                </PopoverTrigger>
-                <Popovercontent>
-                  <Calendar/>
-                </Popovercontent>
-              </Popover>
+              <div className='w-full '>
+             <ShamsiDatePicker date = {manDate} setDate = {setManDate}/>
+              </div>
             </div>
 
             {/* exp-data */}
