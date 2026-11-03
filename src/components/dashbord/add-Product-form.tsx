@@ -13,7 +13,7 @@ import ShamsiDatePicker from './shamsi-date-picker';
 
 function AddProductForm() { 
 
-   const [manDate , setManDate]=  useState<Date>()
+   const [manDate , setManDate]=  useState<Date>();
 
   const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
@@ -71,7 +71,7 @@ function AddProductForm() {
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
               <Label> Man Date</Label>
               <div className='w-full '>
-             <ShamsiDatePicker date = {manDate} setDate = {setManDate}/>
+             <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
               </div>
             </div>
 

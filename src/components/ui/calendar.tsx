@@ -9,7 +9,8 @@ import {
   type Locale,
 } from "react-day-picker";
 
-import { DayPicker} from "@daypicker/persian";
+  import{ DayPicker } from "@daypicker/persian";
+
 
 import { Button, buttonVariants } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon } from "lucide-react"
