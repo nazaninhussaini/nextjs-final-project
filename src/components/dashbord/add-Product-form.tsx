@@ -10,11 +10,12 @@ import { Checkbox } from '../ui/checkbox';
 import { Calendar, Calendar1Icon } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import ShamsiDatePicker from './shamsi-date-picker';
+import ShamsiEndDate from './shamsi-end-date';
 
 function AddProductForm() { 
 
    const [manDate , setManDate]=  useState<Date>();
-
+   const [expDate , setExpDate] = useState<Date>();
   const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
@@ -53,6 +54,23 @@ function AddProductForm() {
             <Input type='number' id='back_image' name='back_image'  />
             </div>
 
+
+            {/* man_data */}
+
+            <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
+              <Label> Man Date</Label>
+              <div className='w-full '>
+             <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
+              </div>
+            </div>
+
+            {/* exp-data */}
+            <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
+            <Label> Exp Date</Label>
+              <div className='w-full '>
+                <ShamsiEndDate date= {expDate} setDate ={setExpDate}/>
+              </div>
+            </div>
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
               <Select value={productType} 
@@ -65,18 +83,6 @@ function AddProductForm() {
                 </SelectContent>
               </Select>
             </div>
-
-            {/* man_data */}
-
-            <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
-              <Label> Man Date</Label>
-              <div className='w-full '>
-             <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
-              </div>
-            </div>
-
-            {/* exp-data */}
-
             {/* colors */}
             <div className='flex items-center flex-wrap gap-2'>
               <h1 className='text-xl p-2 font-bold'>Colors...</h1>
