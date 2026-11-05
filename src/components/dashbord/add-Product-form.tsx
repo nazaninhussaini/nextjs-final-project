@@ -7,15 +7,15 @@ import { Button } from '../ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 
-import { Calendar, Calendar1Icon } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import ShamsiDatePicker from './shamsi-date-picker';
-import ShamsiEndDate from './shamsi-end-date';
+// import { Calendar, Calendar1Icon } from 'lucide-react';
+// import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+// import ShamsiDatePicker from './shamsi-date-picker';
+// import ShamsiEndDate from './shamsi-end-date';
 
 function AddProductForm() { 
 
-   const [manDate , setManDate]=  useState<Date>();
-   const [expDate , setExpDate] = useState<Date>();
+  //  const [manDate , setManDate]=  useState<Date>();
+  //  const [expDate , setExpDate] = useState<Date>();
   const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
@@ -58,34 +58,36 @@ function AddProductForm() {
             {/* man_data */}
 
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
-              <Label> Man Date</Label>
-              <div className='w-full '>
+              <Label>{t("labels.man_date")}</Label>
+              <Input type='date'/>
+              {/* <div className='w-full '>
              <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
-              </div>
+              </div> */}
             </div>
 
             {/* exp-data */}
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
-            <Label> Exp Date</Label>
-              <div className='w-full '>
+            <Label>{t("labels.exp_date")}</Label>
+            <Input type='date'/>
+              {/* <div className='w-full '>
                 <ShamsiEndDate date= {expDate} setDate ={setExpDate}/>
-              </div>
+              </div> */}
             </div>
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
               <Select value={productType} 
               onValueChange={(value)=>setProductType(value)}>
-                <SelectTrigger className="w-full">Select Type</SelectTrigger>
+                <SelectTrigger className="w-full">{t("labels.type")}</SelectTrigger>
                 <SelectContent className="w-full">
-                  <SelectItem className="w-full" value="cloth">Cloth</SelectItem>
-                  <SelectItem className="w-full" value="shoes">Shoes</SelectItem>
-                  <SelectItem className="w-full" value="cosmetic_items">Cosmetic Items</SelectItem>
+                  <SelectItem className="w-full" value="cloth">{t("labels.product_type.cloth")}</SelectItem>
+                  <SelectItem className="w-full" value="shoes">{t("labels.product_type.shoes")}</SelectItem>
+                  <SelectItem className="w-full" value="cosmetic_items">{t("labels.product_type.cosmetice")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             {/* colors */}
             <div className='flex items-center flex-wrap gap-2'>
-              <h1 className='text-xl p-2 font-bold'>Colors...</h1>
+              <h1 className='text-xl p-2 font-bold'>{t("labels.color.title")}</h1>
 
               <div className=' flex p-0 m-0 gap-1 items-center'>
                 <div className='flex gap-1'>
@@ -181,7 +183,7 @@ function AddProductForm() {
               </div>
 
               <Button onClick={()=> setshowColors(!showColors)}> 
-                {showColors ? "Trendy Colors" :"More Colors"}
+                {showColors ? t("labels.color.btn_trend") : t("labels.color.btn_more")}
               </Button>
             </div>
           </form>

@@ -146,6 +146,7 @@
                 "alert_qty":"Alert Quantity",
                 "brand":"Product Brand",
                 "color":{
+                    "title" :"Colors...",
                     "black" : "Black",
                     "red" : "Red",
                     "white" : "White",
@@ -156,7 +157,15 @@
                     "brown" : "Brown",
                     "gray" : "Gray",
                     "yellow" : "Yellow",
-                    "orange" : "Orange"
+                    "orange" : "Orange",
+                    "btn_more": "More Colors",
+                    "btn_trend":"Trendy Colors"
+
+                },
+                "product_type" :{
+                    "cloth": "Clothes",
+                    "shoes": "Shoes",
+                    "cosmetice": "Cosmetice Items"
                 },
                 "size":"Product Size",
                 "man_date":"Man.Date",

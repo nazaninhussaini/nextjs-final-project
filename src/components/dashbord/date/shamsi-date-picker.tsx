@@ -1,7 +1,7 @@
 import React from 'react'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '../../ui/popover'
 import { Calendar1Icon } from 'lucide-react'
-import { Calendar } from '../ui/calendar'
+import { Calendar } from '../../ui/calendar'
 import { format } from "date-fns-jalali";
 
 function ShamsiDatePicker({date , setDate} :{date: Date|undefined ;  setDate : any}) {
