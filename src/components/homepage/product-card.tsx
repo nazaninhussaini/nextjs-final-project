@@ -13,7 +13,7 @@ function ProductCard({products} : {products:{id:number, name:string , price:stri
       <Image src={products.image} alt={products.name} height={700} width={700}  
       className='h-80 object-cover'
       />
-      <div className=' absolute hidden group-hover:block hover:bg-black hover:cursor-pointer hover:text-white transition-all duration-300  left-1/2 bottom-4 bg-white rounded-full py-3 px-6 -translate-1/2 '>
+      <div className=' absolute hidden group-hover:block hover:bg-black hover:cursor-pointer backdrop-blur-3xl hover:text-white transition-all duration-300  left-1/2 bottom-4 bg-white rounded-full py-3 px-6 -translate-1/2 '>
         <h1>Quick View</h1>
       </div>
     </CardHeader>

@@ -145,6 +145,7 @@
                 "qty" :" Quantity",
                 "alert_qty":"Alert Quantity",
                 "brand":"Product Brand",
+                "save_btn" :"Save",
                 "color":{
                     "title" :"Colors...",
                     "black" : "Black",

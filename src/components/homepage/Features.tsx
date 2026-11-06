@@ -32,8 +32,8 @@ function Features() {
     },
   ]
   return (
-    <div className='w-full max-w-6xl mt-4 mx-auto '>
-        <h2 className='text-center text-2xl text-amber-400 font-bold'>{t("subtitle")}</h2>
+    <div className='w-full max-w-6xl mt-20 mx-auto '>
+        <h2 className='text-center text-3xl text-amber-400 font-bold'>{t("subtitle")}</h2>
         <h1 className='text-center text-4xl font-bold text-amber-600 my-6'>{t("title")}</h1>
         <div className='grid w-ful grid-cols-4 gap-6'>
           {listFeatures.map((feature)=>(

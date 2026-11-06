@@ -74,7 +74,13 @@ async function DashbordSideBar() {
                         </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
+              <Link href="/login">
+              
               <SidebarMenuButton><UserPlus/> {t("users.add_User")}</SidebarMenuButton>
+              </Link>
+
+
+
               <SidebarMenuButton><Users/> {t("users.users")}</SidebarMenuButton>
 
               </CollapsibleContent>
