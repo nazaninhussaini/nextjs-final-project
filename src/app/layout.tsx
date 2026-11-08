@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const cookieInfo = await cookies();
   const locale = cookieInfo.get("locale")?.value || "fa";
-  const isRTL = locale === "fa"|| locale ==="pa";
+
    return (
     <html
     suppressHydrationWarning

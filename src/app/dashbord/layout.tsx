@@ -12,7 +12,7 @@ async function DashboardLayout({children}:{children:React.ReactNode}) {
     <div className="w-full min-h-screen  flex">
         <SidebarProvider dir={locale=== "en" ? "ltr": "rtl"}>
 
-        <DashbordSideBar/>
+        <DashbordSideBar />
         <div className="flex w-full gap-2 justify-between flex-col">
         
 

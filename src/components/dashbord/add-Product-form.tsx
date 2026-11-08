@@ -32,7 +32,7 @@ function AddProductForm() {
             <div className=' relative flex flex-col space-y-1.5'>
                 <Label htmlFor='price'>{t("labels.price")}</Label>
             <Input type='number' id='price' name='price' placeholder={t("pleceholder.price")}  />
-            <div className={`absolute top-1/2 pt-4 -translate-y-1/2 ${locale =="en" ?"right-2":"left-2"} bg-white dark:bg-black `}>{locale=="en"?"AFG":"افغانی"}</div>
+            <div className={`absolute top-1/2 pb-1 -translate-y-1/2 ${locale =="en" ?"right-2":"left-2"} bg-white h-0 mb-3 text-center   dark:bg-gray-800 `}>{locale=="en"?"AFG":"افغانی"}</div>
             </div>
 
            <div className='flex space-y-1.5 flex-col'>
@@ -100,6 +100,8 @@ function AddProductForm() {
                 </SelectContent>
               </Select>
             </div>
+
+            
             {/* colors */}
             <div className='flex items-center flex-wrap gap-2'>
               <h1 className='text-xl p-2 font-bold'>{t("labels.color.title")}</h1>
@@ -204,7 +206,7 @@ function AddProductForm() {
 
             {/* description */}
 
-            <div>
+            <div className='grid gap-2'>
               <Label htmlFor='desc'>{t("labels.desc")}</Label>
               <Textarea className='w-full h-40 resize-none' placeholder={t("pleceholder.desc")} />
             </div>

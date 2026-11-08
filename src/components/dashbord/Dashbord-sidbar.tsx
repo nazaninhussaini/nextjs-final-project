@@ -12,9 +12,9 @@ async function DashbordSideBar() {
   const cookiesInfo = await cookies();
   const locale = cookiesInfo.get("locale")?.value || "fa";
   return (
-    <div >
-      <Sidebar side={locale === "en"? "left": 'right'} className='mt-6 pl-1.5'>
-        <SidebarHeader >
+    <div>
+      <Sidebar side={locale === "en"? "left": 'right'} className=' pt-8 pl-1.5 '>
+        <SidebarHeader className='dark:bg-gray-800'>
         <SidebarContent>
           <Link href="/dashbord">
           
@@ -25,10 +25,10 @@ async function DashbordSideBar() {
           </Link>
           </SidebarContent>
         </SidebarHeader>
-            <SidebarGroupLabel>
+            <SidebarGroupLabel className='dark:bg-gray-800'>
                 {t("products.title")}
             </SidebarGroupLabel>
-            <SidebarContent>
+            <SidebarContent className='dark:bg-gray-800'>
             <SidebarGroup className='flex flex-col gap-2'>
                 <SidebarMenuItem>
                     <SidebarMenuButton><LayoutDashboard/> {t("title")}</SidebarMenuButton>
@@ -36,12 +36,12 @@ async function DashbordSideBar() {
                 <SidebarMenuItem>
               <Collapsible>
               <CollapsibleTrigger className="w-full">
-                    <SidebarMenuButton className='flex justify-between '>
+                    <SidebarMenuItem className='flex justify-between '>
                         <div className='flex gap-1.5'>
                         <ShoppingBasket/>  {t("products.title")}
                         </div>
                         <ChevronRight/>
-                        </SidebarMenuButton>
+                        </SidebarMenuItem>
               </CollapsibleTrigger>
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
               <Link href="/dashbord/addProduct">
@@ -66,12 +66,12 @@ async function DashbordSideBar() {
                 <SidebarMenuItem>
               <Collapsible>
               <CollapsibleTrigger className="w-full">
-                    <SidebarMenuButton className='flex justify-between items-center'>
+                    <SidebarMenuItem className='flex justify-between items-center'>
                         <div className='flex gap-1.5'>
                         <User/>  {t("users.title")}
                         </div>
                         <ChevronRight/>
-                        </SidebarMenuButton>
+                        </SidebarMenuItem>
               </CollapsibleTrigger>
               <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
               <Link href="/login">
@@ -133,8 +133,8 @@ async function DashbordSideBar() {
 
         {/* side bar footer */}
 
-        <SidebarFooter>
-            <SidebarContent>
+        <SidebarFooter className='dark:bg-gray-800'>
+            <SidebarContent >
                 <SidebarMenuItem className='flex gap-1 mb-10 justify-between items-center'>
                     <div className='flex gap-1.5 items-center'>
                     <User size={24}/>
