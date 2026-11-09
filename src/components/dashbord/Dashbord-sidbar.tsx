@@ -89,12 +89,12 @@ async function DashbordSideBar() {
                 <SidebarMenuItem>
                     <Collapsible defaultOpen={false} > 
                     <CollapsibleTrigger className="w-full">
-                    <SidebarMenuButton className='flex justify-between items-center'>
+                    <SidebarMenuItem className='flex justify-between items-center'>
                         <div className='flex gap-1.5'>
                       <Star/> {t("reviews.title")}
                         </div>
                         <ChevronRight/>
-                    </SidebarMenuButton>
+                    </SidebarMenuItem>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="ml-6">
                     <SidebarMenuButton>
@@ -111,12 +111,12 @@ async function DashbordSideBar() {
             <SidebarMenuItem>
                 <Collapsible>
                 <CollapsibleTrigger className="w-full">
-                <SidebarMenuButton className='flex justify-between items-center'>
+                <SidebarMenuItem className='flex justify-between items-center'>
                     <div className='flex gap-1.5'>
                    <Book/> {t("reporst.report.title")}
                     </div>
                     <ChevronRight/>
-                </SidebarMenuButton>
+                </SidebarMenuItem>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-6 flex flex-col gap-1.5">
                 <SidebarMenuButton>

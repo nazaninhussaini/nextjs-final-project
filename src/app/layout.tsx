@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Vazirmatn } from "next/font/google";
 import "./globals.css";
-// import NavbarPage from "@/components/UiComponend/navbar";
-import NavebarPage from "@/components/shared/navbar";
+
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import { cookies } from "next/headers";
