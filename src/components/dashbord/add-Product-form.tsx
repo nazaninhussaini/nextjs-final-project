@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useActionState, useState } from 'react'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { useLocale, useTranslations } from 'next-intl';
@@ -7,6 +7,7 @@ import { Button } from '../ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 import { Textarea } from '../ui/textarea';
+import { addProduct } from '@/lib/actions/product-action';
 
 // import { Calendar, Calendar1Icon } from 'lucide-react';
 // import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
@@ -20,19 +21,29 @@ function AddProductForm() {
   const [productType , setProductType] = useState(null); 
   const [showColors, setshowColors] = useState(false);
       const locale = useLocale();
-      const t = useTranslations("dashboard.addProduct")
+      const t = useTranslations("dashboard.addProduct");
+      const [data, action,isPending] = useActionState(addProduct,{
+        status: false,
+        message: ""   
+      });
   return (
 
-          <form action="" className='w-full grid grid-cols-2 gap-3'>
+          <form action={action} className='w-full grid grid-cols-2 gap-3'>
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='name' >{t("labels.name")}</Label>
             <Input type='text' id='name' name='name' placeholder={t("pleceholder.name")} />
+            {data.error?.name && (
+              <p className='text-sm text-red-500'>{data.error.name[0]}</p>
+            )}
             </div>
              
             <div className=' relative flex flex-col space-y-1.5'>
                 <Label htmlFor='price'>{t("labels.price")}</Label>
             <Input type='number' id='price' name='price' placeholder={t("pleceholder.price")}  />
             <div className={`absolute top-1/2 pb-1 -translate-y-1/2 ${locale =="en" ?"right-2":"left-2"} bg-white h-0 mb-3 text-center   dark:bg-gray-800 `}>{locale=="en"?"AFG":"افغانی"}</div>
+            {data.error?.price && (
+              <p className='text-red-500 text-sm'>{data.error.price[0]}</p>
+            )}
             </div>
 
            <div className='flex space-y-1.5 flex-col'>

@@ -124,6 +124,14 @@
             }
         },
         "addProduct":{
+
+            "errors" :{
+                "name.min" : "the product name shuld be at least 3 character",
+                "price" : "the price must be a positive number",
+                "size" : "the product size must be a string",
+                "color.min"  :"At least one color must be selected"
+            },
+
             "title" :"Creat New Product",
             "desc" :"Insert Products that has recently added to the store",
             "pleceholder":{
