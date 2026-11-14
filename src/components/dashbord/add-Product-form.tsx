@@ -24,7 +24,8 @@ function AddProductForm() {
       const t = useTranslations("dashboard.addProduct");
       const [data, action,isPending] = useActionState(addProduct,{
         status: false,
-        message: ""   
+        message: "" ,
+      
       });
   return (
 
@@ -85,7 +86,7 @@ function AddProductForm() {
 
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
               <Label>{t("labels.man_date")}</Label>
-              <Input type='date'/>
+              <Input type='date' name='man_date'  />
               {/* <div className='w-full '>
              <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
               </div> */}
@@ -94,14 +95,14 @@ function AddProductForm() {
             {/* exp-data */}
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
             <Label>{t("labels.exp_date")}</Label>
-            <Input type='date'/>
+            <Input type='date' name='exp_date'/>
               {/* <div className='w-full '>
                 <ShamsiEndDate date= {expDate} setDate ={setExpDate}/>
               </div> */}
             </div>
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
-              <Select value={productType} 
+              <Select name='type' value={productType} 
               onValueChange={(value)=>setProductType(value)}>
                 <SelectTrigger className="w-full">{t("labels.type")}</SelectTrigger>
                 <SelectContent className="w-full">

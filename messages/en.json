@@ -126,10 +126,18 @@
         "addProduct":{
 
             "errors" :{
-                "name.min" : "the product name shuld be at least 3 character",
+                "mandate_error" : "the man date of the product must be smaller then expire date ",
+                "name" : "the product name shuld be at least 3 character",
                 "price" : "the price must be a positive number",
                 "size" : "the product size must be a string",
-                "color.min"  :"At least one color must be selected"
+                "color"  :"At least one color must be selected",
+                "brand" :"the product brand must be at least 3 characters",
+                 "front_image" : "Image is required",
+                 "back_image" : "Image is required",
+                 "image_type" : "the image type must be jppg,jpeg,png,webp ",
+                 "description" : "the product description must be at least 10 characters ",
+                 "qty" : "the Quantity of the product must be a positive number",
+                 "alert_qty" : "Alert Quantity must be a positive number"
             },
 
             "title" :"Creat New Product",
