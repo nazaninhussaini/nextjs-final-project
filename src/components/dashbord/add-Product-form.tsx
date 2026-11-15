@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 import { Textarea } from '../ui/textarea';
 import { addProduct } from '@/lib/actions/product-action';
+import { date } from 'zod';
 
 // import { Calendar, Calendar1Icon } from 'lucide-react';
 // import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
@@ -41,7 +42,7 @@ function AddProductForm() {
             <div className=' relative flex flex-col space-y-1.5'>
                 <Label htmlFor='price'>{t("labels.price")}</Label>
             <Input type='number' id='price' name='price' placeholder={t("pleceholder.price")}  />
-            <div className={`absolute top-1/2 pb-1 -translate-y-1/2 ${locale =="en" ?"right-2":"left-2"} bg-white h-0 mb-3 text-center   dark:bg-gray-800 `}>{locale=="en"?"AFG":"افغانی"}</div>
+            <div className={`absolute top-1/2 pb-3  -translate-y-1/2 ${locale =="en" ?"right-2":"left-2"} bg-white h-0 mb-4 text-center   dark:bg-gray-800 `}>{locale=="en"?"AFG":"افغانی"}</div>
             {data.error?.price && (
               <p className='text-red-500 text-sm'>{data.error.price[0]}</p>
             )}
@@ -50,23 +51,35 @@ function AddProductForm() {
            <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='size'>{t("labels.size")}</Label>
             <Input type='text' id='size' name='size' placeholder={t("pleceholder.size")} />
+           {data.error?.size && (
+            <p className='text-sm text-red-500 bg-black'>{data.error.size[1]}</p>
+           )}
             </div>
 
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='brand'>{t("labels.brand")}</Label>
             <Input type='text' id='brand' name='brand' placeholder={t("pleceholder.brand")} />
+              {data.error?.brand && (
+              <p className='text-red-500 text-sm'>{data.error.brand[0]}</p>
+            )}
             </div>
 
 
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='qty'>{t("labels.qty")}</Label>
             <Input type='number' id='qty' name='qty' placeholder={t("pleceholder.qty")} />
+              {data.error?.qty && (
+              <p className='text-red-500 text-sm'>{data.error.qty[0]}</p>
+            )}
             </div>
 
 
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='alert_qty'>{t("labels.alert_qty")}</Label>
             <Input type='number' id='alert_qty' name='alert_qty' placeholder={t("pleceholder.alert_qty")} />
+              {data.error?.alert_qty && (
+              <p className='text-red-500 text-sm'>{data.error.alert_qty[0]}</p>
+            )}
             </div>
 
           
@@ -74,11 +87,17 @@ function AddProductForm() {
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='front_image'>{t("labels.front_image")}</Label>
             <Input type='file' id='front_image' name='front_image'  />
+              {data.error?.front_image && (
+              <p className='text-red-500 text-sm'>{data.error.front_image[0]}</p>
+            )}
             </div>
              
             <div className='flex space-y-1.5 flex-col'>
             <Label htmlFor='back_image'>{t("labels.back_image")}</Label>
             <Input type='file' id='back_image' name='back_image'  />
+              {data.error?.back_image && (
+              <p className='text-red-500 text-sm'>{data.error.back_image[0]}</p>
+            )}
             </div>
 
 
@@ -87,9 +106,13 @@ function AddProductForm() {
             <div className={`grid gap-1 ${productType == "cloth"? 'hidden' : productType == "shoes"? 'hidden' : "block"}`}>
               <Label>{t("labels.man_date")}</Label>
               <Input type='date' name='man_date'  />
+              
               {/* <div className='w-full '>
              <ShamsiDatePicker date = { manDate } setDate = {setManDate}/>
               </div> */}
+              {data.error?.man_date &&(
+                <p className='text-red-500 text-sm'>{data.error.man_date[0]}</p>
+              )}
             </div>
 
             {/* exp-data */}
@@ -99,6 +122,9 @@ function AddProductForm() {
               {/* <div className='w-full '>
                 <ShamsiEndDate date= {expDate} setDate ={setExpDate}/>
               </div> */}
+                {data.error?.exp_date && (
+              <p className='text-red-500 text-sm'>{data.error.exp_date[0]}</p>
+            )}
             </div>
             <div className='grid gap-2'>
               <Label>{t("labels.type")}</Label>
@@ -111,6 +137,9 @@ function AddProductForm() {
                   <SelectItem className="w-full" value="cosmetic_items">{t("labels.product_type.cosmetice")}</SelectItem>
                 </SelectContent>
               </Select>
+                {data.error?.type && (
+              <p className='text-red-500 text-sm'>{data.error.type[0]}</p>
+            )}
             </div>
 
             
@@ -210,7 +239,9 @@ function AddProductForm() {
                 <Checkbox name ="color" id ="orange" value="orange"/>
                 </div>
               </div>
-
+              {data.error?.color &&(
+                <p className='text-sm text-red-500'>{data.error.color[0]}</p>
+              )}
               <Button onClick={()=> setshowColors(!showColors)}> 
                 {showColors ? t("labels.color.btn_trend") : t("labels.color.btn_more")}
               </Button>
@@ -221,6 +252,9 @@ function AddProductForm() {
             <div className='grid gap-2'>
               <Label htmlFor='desc'>{t("labels.desc")}</Label>
               <Textarea className='w-full h-40 resize-none' placeholder={t("pleceholder.desc")} />
+                {data.error?.description && (
+              <p className='text-red-500 text-sm'>{data.error.description[0]}</p>
+            )}
             </div>
 
             <Button type='submit' className="mt-3">{t("labels.save_btn")}</Button>

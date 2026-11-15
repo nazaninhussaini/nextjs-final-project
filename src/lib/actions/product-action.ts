@@ -1,6 +1,6 @@
 "use server";
 import { getTranslations } from "next-intl/server";
-import {size, z} from "zod";
+import {z} from "zod";
 const ImageFormat = ["PNG , JPG , JPEG , GIF , webp"]
 export async function addProduct(prevState : any , formData : FormData){
     const t = await getTranslations("dashboard.addProduct.errors");
@@ -8,6 +8,7 @@ export async function addProduct(prevState : any , formData : FormData){
         name: z.string().min(3, t("name")),
         price : z.coerce.number().positive(t("price")),
         size : z.string(t("size")),
+        type : z.string(),
         color : z.array(z.string()).min(1,t("color")),
         brand :z.string().min(3,t("brand")),
         qty: z.coerce.number().positive(t("qty")),
@@ -23,13 +24,16 @@ export async function addProduct(prevState : any , formData : FormData){
         t("image_type")
         ),
         description : z.string().min(10), 
+        man_date : z.date(),
+        exp_date : z.date(),
+     }).refine((value)=>value.man_date < value.exp_date, "Man date should be smaller then exp date")
 
-     });
-   const dateValidate   =  z.object({
-        mandate : z.date(),
-        expdate : z.date(),
-     }).refine((value)=> value.mandate < value.expdate);
+//    const dateValidate   =  z.object({
+//         mandate : z.date(),
+//         expdate : z.date(),
+//      }).refine((value)=> value.mandate < value.expdate, "Man date should be smaller then exp date");
 
+//     const final = validationSechma.and(dateValidate);
     const validationChecker = validationSechma.safeParse({
         name : formData.get("name"),
         price : Number(formData.get("price")),
@@ -52,6 +56,8 @@ export async function addProduct(prevState : any , formData : FormData){
             message: "validation Error",
             error: validationChecker.error.flatten().fieldErrors,
         }
+    }else{
+       
     }
  return {
     status: true,
