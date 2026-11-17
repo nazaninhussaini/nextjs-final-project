@@ -6,11 +6,11 @@ import SignUpForm from '@/components/UiComponend/sign_up_form';
 
 function page() {
   return (
-    <div className='w-full h-screen flex justify-center items-center'>
-        <Card className = "w-1/4 py-2">
+    <div className='lg:w-8/12 md:w-6/12 w-full grid grid-cols-5  items-center h-screen justify-center mx-auto'>
+        <Card className=' col-span-3 w-full'>
             <CardHeader>
                 <CardTitle className ="text-3xl font-semibold">Sign Up</CardTitle>
-                <CardDescription>Login to the platform using email and password</CardDescription>
+                <CardDescription>Sign up the platform using email and password</CardDescription>
             </CardHeader>
             <CardContent>
                 <SignUpForm/>
@@ -24,6 +24,10 @@ function page() {
                 </div>
             </CardContent>
         </Card>
+        <div className='w-full col-span-2 flex justify-start p-12 m-5 gap-4 items-start flex-col'>
+            <p className='text-2xl font-bold text-amber-600'>WELCOM TO SIGN UP FORM</p>
+            <p className='text-sm font-mono'>Sign Up with email and password phone number in website.</p>
+        </div>
     </div>
   )
 }
