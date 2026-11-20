@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 import { Textarea } from '../ui/textarea';
-import { addProduct } from '@/lib/actions/product-action';
+import { addProduct } from '@/lib/actions/product.action';
 import { date } from 'zod';
 
 // import { Calendar, Calendar1Icon } from 'lucide-react';
